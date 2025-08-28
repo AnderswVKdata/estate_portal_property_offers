@@ -1,3 +1,5 @@
+/**odoo/module */
+
 document.addEventListener('click', function (e) {
 
    const star = e.target.closest('.favorite-star');

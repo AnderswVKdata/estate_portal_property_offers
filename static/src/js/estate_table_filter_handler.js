@@ -1,3 +1,5 @@
+/**odoo/module */
+
 document.querySelectorAll('#filter_form select, #filter_form input').forEach(el => {
     el.addEventListener('change', () => {
       document.getElementById('filter_form').submit();

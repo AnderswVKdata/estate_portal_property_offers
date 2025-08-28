@@ -1,14 +1,5 @@
+/**odoo/module */
 
-odoo.define('estate_portal.table_sorting', [], function (require) {
-    'use strict';
-
-
-
-    const container = document.getElementById('property_table_container');
-    if (!container) {
-        console.warn('Property table container not found');
-        return;
-    }
     const table = document.querySelector('table.table-hover');
     if (!table) return;
 
@@ -43,6 +34,6 @@ odoo.define('estate_portal.table_sorting', [], function (require) {
             rows.forEach(row => tbody.appendChild(row));
         });
     });
-});
+
     
 
