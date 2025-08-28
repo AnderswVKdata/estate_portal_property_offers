@@ -1,0 +1,14 @@
+<odoo>
+    <template id="portal_my_home_estate" name="Portal Estate" inherit_id="portal.portal_my_home" customize_show="True" priority="600">
+        <div class="o_portal_category row g-2 mt-3" id="portal_common_category">
+            <t t-call="portal.portal_docs_entry" t-if="False" />
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="icon" t-value="'/account/static/src/img/bank.svg'" />
+                <t t-set="title">kekw</t>
+                <t t-set="text">kekw2</t>
+                <t t-set="url" t-value="'/my/estate-available'" />
+                <t t-set="config_card" t-value="True" />
+            </t>
+        </div>
+    </template>
+</odoo>
