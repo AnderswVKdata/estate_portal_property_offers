@@ -37,11 +37,9 @@
                                 <label for="favorites_only" class="form-check-label">Show Favorites Only</label>
                             </div>                         
                             <div class="mb-3">
-                                <button type="submit" class="btn btn-primary" style="width:100%;"> Reset Filter </button>
-                            </div>
-
-
-                            
+                                <button type="button" class="btn btn-primary" id="reset_filters">Reset Filter</button>
+         
+                            </div>       
                             
                         </form>
                     </div>
