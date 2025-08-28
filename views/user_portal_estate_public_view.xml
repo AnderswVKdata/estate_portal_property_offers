@@ -1,0 +1,40 @@
+<odoo>
+    <template id="user_portal_estate_public_view" name="All Estate Properties">
+        <t t-call="portal.portal_layout">
+            <t t-set="title">Available Estate Properties</t>
+            <div class="container o_portal_my_doc_table">
+                <h2>All Properties</h2>
+
+                <div class="row">
+                    <t t-foreach="properties" t-as="prop" style="cursor:pointer;">
+                        <div class="col-md-4 mb-4">
+                            <div 
+                                class="card h-100 shadow-sm clickable-card" 
+                                t-att-data-href="'/my/estate/%d' % prop.id"
+                                style="cursor:pointer;"
+                                onmouseover="this.style.backgroundColor='#f0f0f0';"
+                                onmouseout="this.style.backgroundColor='';"
+                            >
+                                <img t-att-src="'/account/static/src/img/castle.jpg'" class="card-img-top" alt="Castle Image"/>
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <t t-esc="prop.name"/>
+                                    </h5>
+                                    <p class="card-text">
+                                        <strong>Type:</strong> <t t-esc="prop.property_type_id.name or 'N/A'"/><br/>
+                                        <strong>Postcode:</strong> <t t-esc="prop.postcode or 'N/A'"/><br/>
+                                        <strong>Address:</strong> <t t-esc="prop.address or 'N/A'"/><br/>
+                                        <strong>Living Area:</strong> <t t-esc="prop.living_area or 0"/> m²<br/>
+                                        <strong>Price:</strong> <t t-esc="prop.expected_price or 0.0"/> $<br/>
+                                        <strong>Available:</strong> <t t-esc="prop.date_availability"/><br/>
+                                        <strong>Status:</strong> <t t-esc="prop.state"/>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

@@ -17,7 +17,9 @@
         'security/ir.model.access.csv',
         'views/user_portal_view.xml',
         'views/user_portal_estate_view.xml',
-        'views/user_portal_estate_detail_view.xml'
+        'views/user_portal_estate_detail_view.xml',
+        'views/user_portal_estate_public_view.xml',
+        
     ],
     
     

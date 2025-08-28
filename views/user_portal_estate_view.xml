@@ -45,26 +45,26 @@
                     </div>
 
                     <!-- RIGHT PROPERTY LIST -->
-                    <div class="col-md-9">
+                    <div id="property_table_container" class="col-md-9">
                         <table class="table table-hover table-striped">
                             <thead>
                                 <tr>
                                     <th></th>
-                                    <th>Name</th>
-                                    <th>Type</th>
-                                    <th>Postcode</th>
-                                    <th>Address</th>
-                                    <th>Living Area</th>
-                                    <th>Expected Price</th>
-                                    <th>My Offer</th>
-                                    <th>Availability</th>
-                                    <th>Status</th>
+                                    <th class="sortable" data-sort-key="name" style="cursor:pointer;">Name</th>
+                                    <th class="sortable" data-sort-key="property_type" style="cursor:pointer;">Type</th>
+                                    <th class="sortable" data-sort-key="postcode" style="cursor:pointer;">Postcode</th>
+                                    <th class="sortable" data-sort-key="address" style="cursor:pointer;">Address</th>
+                                    <th class="sortable" data-sort-key="living_area" style="cursor:pointer;">Living Area</th>
+                                    <th class="sortable" data-sort-key="expected_price" style="cursor:pointer;">Expected Price</th>
+                                    <th class="sortable" data-sort-key="my_offer" style="cursor:pointer;">My Offer</th>
+                                    <th class="sortable" data-sort-key="date_availability" style="cursor:pointer;">Availability</th>
+                                    <th class="sortable" data-sort-key="state" style="cursor:pointer;">Status</th>
                                     <th>Favorite</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <t t-foreach="properties" t-as="prop">
-                                    <tr t-att-data-href="'/my/estate/%d' % prop.id" class="clickable-row" style="cursor:pointer;">                         
+                                    <tr t-att-data-href="'/my/estate/%d' % prop.id" class="clickable-row" style="cursor:pointer;">
                                         <t t-set="icon" t-value="'/account/static/src/img/castle.jpg'" />
                                         <td>
                                             <img t-att-src="icon" alt="Castle" style="width:100%; max-width:40px; height:auto;" />
@@ -87,20 +87,13 @@
                                             <t t-if="my_offer">
                                                 <t t-esc="my_offer"/> $
                                             </t>
-                                            <t t-if="not my_offer">
-                                                
-                                            </t>
                                         </td>
                                         <td><t t-esc="prop.date_availability"/></td>
                                         <td><t t-esc="prop.state"/></td>
                                         <td>
                                             <label style="cursor:pointer;">
-                                                <!-- The checkbox can be hidden, but must have data-id -->
                                                 <input type="checkbox" class="favorite-checkbox d-none" t-att-data-id="prop.id" />
-                                                
-                                                <!-- Determine if this property is favorite for the current user -->
                                                 <t t-set="is_favorite" t-value="prop in partner.favorite_property_ids"/>
-                                                
                                                 <span
                                                     class="favorite-star"
                                                     t-att-class="is_favorite and 'favorite-star active-star' or 'favorite-star'"
@@ -116,12 +109,9 @@
                             </tbody>
                         </table>
                     </div>
+
                 </div>
             </div>
-            <script>
-                
-            </script>
-
         </t>
     </template>
 </odoo>

@@ -54,6 +54,8 @@ class EstatePortalController(http.Controller):
             'property': prop,
             'partner': request.env.user.partner_id,
         })
+
+    
     
     @http.route('/my/estate/<int:property_id>/offer', type='http', auth='user', website=True, methods=['POST'], csrf=False)
     def submit_offer(self, property_id, price=None, **kwargs):
