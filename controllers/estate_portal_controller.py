@@ -4,7 +4,7 @@ from odoo.http import request
 
 class EstatePortalController(http.Controller):
 
-    @http.route('/my/estate-available', type='http', auth="user", website=True, csrf=False)
+    @http.route('/my/estate-available', type='http', auth="public", website=True, csrf=False)
     def portal_estate_available(self, **kwargs):
 
         filters = {
@@ -45,7 +45,7 @@ class EstatePortalController(http.Controller):
             partner.write({'favorite_property_ids': [(4, property_rec.id)]})  # add
             return {'success': True, 'favorited': True}
     
-    @http.route('/my/estate/<int:property_id>', type='http', auth='user', website=True)
+    @http.route('/my/estate/<int:property_id>', type='http', auth='public', website=True)
     def property_detail(self, property_id, **kw):
         prop = request.env['estate.property'].sudo().browse(property_id)
         if not prop.exists():

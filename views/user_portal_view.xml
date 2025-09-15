@@ -4,8 +4,8 @@
             <t t-call="portal.portal_docs_entry" t-if="False" />
             <t t-call="portal.portal_docs_entry">
                 <t t-set="icon" t-value="'/account/static/src/img/bank.svg'" />
-                <t t-set="title">kekw</t>
-                <t t-set="text">kekw2</t>
+                <t t-set="title">Real Estate Portal</t>
+                <t t-set="text">Check it out!</t>
                 <t t-set="url" t-value="'/my/estate-available'" />
                 <t t-set="config_card" t-value="True" />
             </t>

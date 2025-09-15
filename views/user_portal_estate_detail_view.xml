@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div>
-                <button class="btn btn-secondary mb-2" type="button" onclick="window.location.href='/my/estate-available'">Back</button>
+                <button class="btn btn-secondary mb-2" type="button" onclick="window.history.back()">Back</button>
             </div>
         </t>
     </template>
